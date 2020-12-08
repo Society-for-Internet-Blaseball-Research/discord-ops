@@ -1,0 +1,69 @@
+power:
+  Headmistress: {}
+  Society Caretaker: {}
+  SIBR GitOps: {}
+  ModMail:
+    hoist: true
+  Council Member:
+    permissions:
+      - MANAGE_MESSAGES
+  carl-bot: {}
+sidebar:
+  Shopkeeper: "#c8a2c8"
+  Elder Servorcerer: "#e74c3c"
+special:
+  Ambassador of Wiki: "#9dc183"
+  Little Sister: "#f14870"
+  Commissioner Safety Review Board: "#f16dd8"
+  Salmon Sage: "#fa8072"
+
+colors:
+  Data Witch:
+    color: "#dc721b"
+    emoji: 🔮
+  Graphilospher:
+    color: "#358cdb"
+    emoji: 📈
+  Servorcerer:
+    color: "#e74c3c"
+    emoji: 🖥️
+  Data Alchemist:
+    color: "#dba520"
+    emoji: 🖌️
+  Data Zealot:
+    color: "#50acce"
+    emoji: 🤔
+  sibrpunk:
+    color: "#9d7c61"
+    emoji: ☕
+
+pronouns:
+  any pronouns: 🐶
+  no pronouns: 🐺
+  ey/em: 🦊
+  he/him: 🐱
+  it/its: 🦁
+  she/her: 🐯
+  shi/hir: 🐼
+  sie/hir: 🦌
+  they/them: 🐭
+  xe/xem: 🐹
+  xie/xer: 🦔
+  ze/zir: 🐻
+
+# Bots that should be part of the Automaton role for global channel access
+automata:
+  - "Carl-bot#1536"
+  - "PluralKit#4020"
+
+# Base permissions for all roles, used for @everyone
+everyone:
+  - ADD_REACTIONS
+  - ATTACH_FILES
+  - CHANGE_NICKNAME
+  - CREATE_INSTANT_INVITE
+  - EMBED_LINKS
+  - READ_MESSAGE_HISTORY
+  - SEND_MESSAGES
+  - USE_EXTERNAL_EMOJIS
+  - VIEW_CHANNEL

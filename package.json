@@ -1,0 +1,22 @@
+{
+  "name": "sibr-discord-ops",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "fix": "eslint --fix --ext .js ."
+  },
+  "author": "iliana quorum <iliana@sibr.dev>",
+  "license": "MIT",
+  "description": "gitops for the SIBR discord server",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
