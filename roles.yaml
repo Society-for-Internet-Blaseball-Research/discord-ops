@@ -38,18 +38,25 @@ colors:
     emoji: ☕
 
 pronouns:
-  any pronouns: 🐶
-  no pronouns: 🐺
-  ey/em: 🦊
-  he/him: 🐱
-  it/its: 🦁
-  she/her: 🐯
-  shi/hir: 🐼
-  sie/hir: 🦌
-  they/them: 🐭
-  xe/xem: 🐹
-  xie/xer: 🦔
-  ze/zir: 🐻
+  any pronouns: ✳️
+  no pronouns: ❎
+  ae/aer: 🐶
+  ey/em: 🐱
+  fae/faer: 🦋
+  he/him: 🐭
+  it/its: 🐹
+  she/her: 🐨
+  shi/hir: 🐻
+  sie/hir: 🦊
+  star/stars: 🌟
+  they/them: 🐼
+  xe/xem: 🐰
+  xie/xer: 🐯
+  xze/xem: 🦁
+  ze/zir: 🦉
+  zie/hir: 🐺
+
+# some more emoji: 🦝🦔🦥🦇
 
 # Bots that should be part of the Automaton role for global channel access
 automata:
