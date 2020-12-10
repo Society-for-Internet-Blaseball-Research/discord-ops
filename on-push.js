@@ -59,7 +59,7 @@ async function run() {
   const roles = await Promise.all((await loadRoles(guild)).map((role) => {
     if (role.id) {
       if (myRole.position > role.position) {
-        return guild.roles.cache.get(role.id).edit(role);
+        return guild.roles.fetch(role.id).edit(role);
       }
       return Promise.resolve(role);
     }

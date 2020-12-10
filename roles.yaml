@@ -21,21 +21,27 @@ special:
 colors:
   Data Witch:
     color: "#dc721b"
+    humanColor: orange
     emoji: 🔮
   Graphilospher:
     color: "#358cdb"
+    humanColor: blue
     emoji: 📈
   Servorcerer:
     color: "#e74c3c"
+    humanColor: red
     emoji: 🖥️
   Data Alchemist:
     color: "#dba520"
+    humanColor: yellow
     emoji: 🖌️
   Data Zealot:
     color: "#50acce"
+    humanColor: aqua
     emoji: 🤔
   sibrpunk:
     color: "#9d7c61"
+    humanColor: brown
     emoji: ☕
 
 pronouns:
@@ -60,8 +66,8 @@ pronouns:
 # some more emoji: 🦝🦔🦥🦇
 
 # Bots that should be part of the Automaton role for global channel access
+# (Don't list bots that have admin access here, they don't need it)
 automata:
-  - "Carl-bot#1536"
   - "PluralKit#4020"
 
 # Base permissions for all roles, used for @everyone
