@@ -55,21 +55,18 @@ async function run() {
   const guild = await client.guilds.fetch(process.env.GUILD);
 
   // create / modify roles
-  const roles = await loadRoles(guild);
   const myRole = guild.me.roles.highest;
-  await Promise.all(roles.map((role) => {
+  const roles = await Promise.all((await loadRoles(guild)).map((role) => {
     if (role.id) {
       if (myRole.position > role.position) {
         return guild.roles.cache.get(role.id).edit(role);
       }
-      return Promise.resolve();
+      return Promise.resolve(role);
     }
     return guild.roles.create({ data: role });
   }));
 
   // set role positions
-  console.log(roles.slice(0).reverse()
-    .map((role, position) => ({ role: role.id, position })));
   await guild.setRolePositions(roles.slice(0).reverse()
     .map((role, position) => ({ role: role.id, position })));
 }
