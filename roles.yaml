@@ -7,6 +7,7 @@ power:
   Council Member:
     permissions:
       - MANAGE_MESSAGES
+  Professor of Augury: {}
   carl-bot: {}
 sidebar:
   Shopkeeper: "#c8a2c8"
