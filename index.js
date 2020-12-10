@@ -68,6 +68,8 @@ async function run() {
   }));
 
   // set role positions
+  console.log(roles.slice(0).reverse()
+    .map((role, position) => ({ role: role.id, position })));
   await guild.setRolePositions(roles.slice(0).reverse()
     .map((role, position) => ({ role: role.id, position })));
 }
