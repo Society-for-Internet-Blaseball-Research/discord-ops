@@ -56,7 +56,7 @@ other:
   - Spoiler Seer
   - Automaton
 
-pronouns:
+pronouns1:
   pronouns in name: 🔤
   ask for pronouns: 🗨️
   any pronouns: ✳️
@@ -92,5 +92,5 @@ everyone:
   - VIEW_CHANNEL
 
 strings:
-  pronouns: "Pronouns | Roles are ordered alphabetically; consider listing pronouns in your name if you have multiple."
   colors: "Role / Color | Select a role that suits you. Descriptions are purely thematic."
+  pronouns1: "Pronouns | Roles are ordered alphabetically; consider listing pronouns in your name if you have multiple."

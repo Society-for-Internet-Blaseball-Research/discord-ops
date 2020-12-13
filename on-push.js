@@ -30,7 +30,7 @@ async function loadRoles(c, guild) {
     ...Object.entries(c.colors).map(([name, { color }]) => newRole(guild, name, { color })),
     ...Object.entries(c.special).map(([name, color]) => newRole(guild, name, { color })),
     ...c.other.map((name) => newRole(guild, name)),
-    ...Object.keys(c.pronouns).map((name) => newRole(guild, name)),
+    ...Object.keys(c.pronouns1).map((name) => newRole(guild, name)),
     newRole(guild, '@everyone', { permissions: c.everyone }),
   ];
 
@@ -81,13 +81,13 @@ function hasReaction(message, emoji) {
 async function checkRoleMessage(guild, config, message) {
   const embed = message.embeds[0];
   const data = {
-    3509467: {
-      roles: rrProcess(config.pronouns),
-      desc: config.strings.pronouns,
-    },
     9662683: {
       roles: rrProcess(config.colors),
       desc: config.strings.colors,
+    },
+    3509467: {
+      roles: rrProcess(config.pronouns1),
+      desc: config.strings.pronouns1,
     },
   }[embed.color.toString()];
 
