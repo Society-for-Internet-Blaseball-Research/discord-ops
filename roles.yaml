@@ -9,6 +9,7 @@ power:
       - MANAGE_MESSAGES
   Professor of Augury: {}
   carl-bot: {}
+  YAGPDB.xyz: {}
 sidebar:
   Shopkeeper: "#c8a2c8"
   Elder Servorcerer: "#e74c3c"
@@ -43,6 +44,11 @@ colors:
     color: "#9d7c61"
     humanColor: brown
     emoji: ☕
+
+other:
+  - Council Emeritus
+  - Spoiler Seer
+  - Automaton
 
 pronouns:
   pronouns in name: 🔤
