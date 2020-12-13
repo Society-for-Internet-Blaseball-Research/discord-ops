@@ -29,8 +29,8 @@ async function loadRoles(guild) {
     ...Object.entries(c.power).map(([name, data]) => newRole(guild, name, data)),
     ...Object.entries(c.sidebar)
       .map(([name, color]) => newRole(guild, name, { color, hoist: true })),
-    ...Object.entries(c.special).map(([name, color]) => newRole(guild, name, { color })),
     ...Object.entries(c.colors).map(([name, { color }]) => newRole(guild, name, { color })),
+    ...Object.entries(c.special).map(([name, color]) => newRole(guild, name, { color })),
     ...c.other.map((name) => newRole(guild, name)),
     ...Object.keys(c.pronouns).map((name) => newRole(guild, name)),
     newRole(guild, '@everyone', { permissions: c.everyone }),
