@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const Discord = require('discord.js');
 const fs = require('fs');
+const pluralize = require('pluralize');
 const process = require('process');
 const util = require('util');
 const YAML = require('yaml');
@@ -68,7 +69,7 @@ function rrProcess(roles) {
     return {
       name: role,
       emoji: value.emoji,
-      help: `${value.emoji} **${role}** *(${value.humanColor})* ${value.desc}.`,
+      help: `${value.emoji} **${pluralize(role)}** *(${value.humanColor})* ${value.desc}.`,
     };
   });
 }
