@@ -22,9 +22,7 @@ function newRole(guild, name, data) {
   };
 }
 
-async function loadRoles(guild) {
-  const file = await util.promisify(fs.readFile)('roles.yaml', 'utf8');
-  const c = YAML.parse(file);
+async function loadRoles(c, guild) {
   const roles = [
     ...Object.entries(c.power).map(([name, data]) => newRole(guild, name, data)),
     ...Object.entries(c.sidebar)
@@ -51,12 +49,69 @@ async function loadRoles(guild) {
   return roles;
 }
 
+async function carlRelay(guild, message) {
+  const spamRoom = guild.channels.cache.find((channel) => channel.name === 'carl-spam-zone');
+  // const modRole = guild.roles.cache.find((role) => role.name === 'Society Caretaker');
+  // await spamRoom.send(`<@&${modRole.id}> ${message}`);
+  await spamRoom.send(`please relay to carl: \`\`\`\n${message}\n\`\`\``);
+}
+
+function rrProcess(roles) {
+  return Object.entries(roles).map(([role, value]) => {
+    if (typeof value === 'string') {
+      return {
+        name: role,
+        emoji: value,
+        help: `${value} ${role}`,
+      };
+    }
+    return {
+      name: role,
+      emoji: value.emoji,
+      help: `${value.emoji} **${role}** *(${value.humanColor})* ${value.desc}.`,
+    };
+  });
+}
+
+function hasReaction(message, emoji) {
+  return (message.reactions.cache.has(emoji)
+    || message.reactions.cache.has(emoji.replace(/\ufe0f$/, '')));
+}
+
+async function checkRoleMessage(guild, config, message) {
+  const embed = message.embeds[0];
+  const data = {
+    3509467: {
+      roles: rrProcess(config.pronouns),
+      desc: config.strings.pronouns,
+    },
+    9662683: {
+      roles: rrProcess(config.colors),
+      desc: config.strings.colors,
+    },
+  }[embed.color.toString()];
+
+  const desc = [data.desc, ...data.roles.map((role) => role.help)].join('\n');
+  if (desc !== `${embed.title} | ${embed.description}`) {
+    await carlRelay(guild, `c!rr edit ${message.id} ${desc}`);
+  }
+
+  const missing = data.roles.filter((role) => !hasReaction(message, role.emoji))
+    .map((role) => `${role.emoji} ${role.name}`).join('\n');
+  if (missing) {
+    await carlRelay(guild, `c!rr addmany ${message.id}\n${missing}`);
+  }
+}
+
 async function run() {
+  const file = await util.promisify(fs.readFile)('roles.yaml', 'utf8');
+  const config = YAML.parse(file);
+
   const guild = await client.guilds.fetch(process.env.GUILD);
 
   // create / modify roles
   const myRole = guild.me.roles.highest;
-  const roles = await Promise.all((await loadRoles(guild)).map((role) => {
+  const roles = await Promise.all((await loadRoles(config, guild)).map((role) => {
     if (role.id) {
       if (myRole.position > role.position) {
         return guild.roles.fetch(role.id).edit(role);
@@ -69,6 +124,11 @@ async function run() {
   // set role positions
   await guild.setRolePositions(roles.slice(0).reverse()
     .map((role, position) => ({ role: role.id, position })));
+
+  // check reaction role messages and send corrections to #carl-spam-zone
+  const roleRoom = guild.channels.cache.find((channel) => channel.name === 'roles-and-sigils');
+  const roleMessages = await roleRoom.messages.fetch();
+  await Promise.all(roleMessages.map((message) => checkRoleMessage(guild, config, message)));
 }
 
 client.on('ready', () => run().catch(console.error).finally(() => client.destroy()));

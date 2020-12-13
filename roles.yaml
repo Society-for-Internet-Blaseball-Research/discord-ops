@@ -22,26 +22,32 @@ special:
 colors:
   Data Witch:
     color: "#dc721b"
+    desc: build systems to process the data the Blaseball Gods provide us
     humanColor: orange
     emoji: 🔮
   Graphilospher:
     color: "#358cdb"
+    desc: excel in mathematics and statistics
     humanColor: blue
     emoji: 📈
   Servorcerer:
     color: "#e74c3c"
+    desc: "help with devops: deploying the systems the Society has built"
     humanColor: red
     emoji: 🖥️
   Data Alchemist:
     color: "#dba520"
+    desc: turn data into gold through user interfaces and graphic design
     humanColor: yellow
     emoji: 🖌️
   Data Zealot:
     color: "#50acce"
+    desc: ask interesting questions and enjoy exploring data
     humanColor: aqua
     emoji: 🤔
   sibrpunk:
     color: "#9d7c61"
+    desc: are folks hanging out for our Coffee Cup team, the Society Data Witches
     humanColor: brown
     emoji: ☕
 
@@ -84,3 +90,7 @@ everyone:
   - SEND_MESSAGES
   - USE_EXTERNAL_EMOJIS
   - VIEW_CHANNEL
+
+strings:
+  pronouns: "Pronouns | Roles are ordered alphabetically; consider listing pronouns in your name if you have multiple."
+  colors: "Role / Color | Select a role that suits you. Descriptions are purely thematic."
