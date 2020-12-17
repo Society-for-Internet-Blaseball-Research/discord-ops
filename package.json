@@ -10,6 +10,7 @@
   "license": "MIT",
   "description": "gitops for the SIBR discord server",
   "dependencies": {
+    "chalk": "^4.1.0",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "pluralize": "^8.0.0",
