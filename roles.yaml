@@ -54,7 +54,6 @@ colors:
 
 other:
   - Council Emeritus
-  - Spoiler Seer
   - Spoiler Seeker
   - Automaton
 
@@ -84,6 +83,32 @@ pronouns2:
 
 # some more emoji: 🐰🦝🦇
 
+visibility:
+  Research Access:
+    name: Research
+    desc: In-depth game research and analysis; game mechanics, economy, sibrmetrics
+    emoji: 📖
+  Project Access:
+    name: Major Projects
+    desc: Many channels dedicated to discussion of various SIBR projects
+    emoji: 💼
+  Salmon Seer:
+    name: Salmon
+    desc: Channels related to CRiSP Harvest Model, a mid-90s salmon harvest simulation program
+    emoji: 🐟
+  Spoiler Seer:
+    name: Story Spoilers
+    desc: Game code analysis and discussion of possible upcoming spoilers
+    emoji: 👁️
+  Automata Access:
+    name: Automata
+    desc: Channels for interacting with bots
+    emoji: 🤖
+  Archives Access:
+    name: Archives
+    desc: The Society Archives, home to channels gone, but not forgotten
+    emoji: 🗄️
+
 # Base permissions for all roles, used for @everyone
 everyone:
   - ADD_REACTIONS
@@ -105,3 +130,6 @@ strings:
     description: "Roles are ordered alphabetically; consider listing pronouns in your name if you have multiple. If your pronouns aren't here, message <@!575252669443211264>!"
   pronouns2:
     title: "Pronouns (2/2)"
+  visibility:
+    title: "Channel access"
+    description: "Most of the Society's channels are hidden by default. You can toggle access to each category here. _Note: These are under construction_"

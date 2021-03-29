@@ -30,6 +30,7 @@ async function loadRoles(c, guild) {
       .map(([name, color]) => newRole(guild, name, { color, hoist: true })),
     ...Object.entries(c.colors).map(([name, { color }]) => newRole(guild, name, { color })),
     ...Object.entries(c.special).map(([name, color]) => newRole(guild, name, { color })),
+    ...Object.keys(c.visibility).map((name) => newRole(guild, name)),
     ...c.other.map((name) => newRole(guild, name)),
     ...[...Object.keys(c.pronouns1), ...Object.keys(c.pronouns2)]
       .map((name) => newRole(guild, name)),
@@ -58,7 +59,7 @@ async function carlRelay(guild, message) {
   await spamRoom.send(`please relay to carl: \`\`\`\n${message}\n\`\`\``);
 }
 
-function rrProcess(roles) {
+function rrProcess(roles, props) {
   return Object.entries(roles).map(([role, value]) => {
     if (typeof value === 'string') {
       return {
@@ -67,10 +68,17 @@ function rrProcess(roles) {
         help: `${value} ${role}`,
       };
     }
+    if (props?.complex) {
+      return {
+        name: role,
+        emoji: value.emoji,
+        help: `${value.emoji} **${pluralize(role)}** *(${value.humanColor})* ${value.desc}.`,
+      };
+    }
     return {
       name: role,
       emoji: value.emoji,
-      help: `${value.emoji} **${pluralize(role)}** *(${value.humanColor})* ${value.desc}.`,
+      help: `${value.emoji} **${role}**: ${value.desc}.`,
     };
   });
 }
@@ -84,7 +92,7 @@ async function checkRoleMessage(guild, config, message) {
   const embed = message.embeds[0];
   const data = {
     0x9370db: {
-      roles: rrProcess(config.colors),
+      roles: rrProcess(config.colors, { complex: true }),
       ...config.strings.colors,
     },
     0x358cdb: {
@@ -94,6 +102,10 @@ async function checkRoleMessage(guild, config, message) {
     0x1fd9b7: {
       roles: rrProcess(config.pronouns2),
       ...config.strings.pronouns2,
+    },
+    0xf14870: {
+      roles: rrProcess(config.visibility),
+      ...config.strings.visibility,
     },
   }[embed.color.toString()];
 
