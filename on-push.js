@@ -85,19 +85,19 @@ async function checkRoleMessage(guild, config, message) {
   const data = {
     0x9370db: {
       roles: rrProcess(config.colors),
-      desc: config.strings.colors,
+      ...config.strings.colors,
     },
     0x358cdb: {
       roles: rrProcess(config.pronouns1),
-      desc: config.strings.pronouns1,
+      ...config.strings.pronouns1,
     },
     0x1fd9b7: {
       roles: rrProcess(config.pronouns2),
-      desc: config.strings.pronouns2,
+      ...config.strings.pronouns2,
     },
   }[embed.color.toString()];
 
-  const desc = [data.desc, ...data.roles.map((role) => role.help)].join('\n');
+  const desc = `${data.title} | ${[...(data.description ? [data.description] : []), ...data.roles.map((role) => role.help)].join('\n')}`;
   if (desc !== `${embed.title} | ${embed.description}`) {
     await carlRelay(guild, `c!rr edit ${message.id} ${desc}`);
   }
