@@ -31,7 +31,8 @@ async function loadRoles(c, guild) {
     ...Object.entries(c.colors).map(([name, { color }]) => newRole(guild, name, { color })),
     ...Object.entries(c.special).map(([name, color]) => newRole(guild, name, { color })),
     ...c.other.map((name) => newRole(guild, name)),
-    ...Object.keys(c.pronouns1).map((name) => newRole(guild, name)),
+    ...[...Object.keys(c.pronouns1), ...Object.keys(c.pronouns2)]
+      .map((name) => newRole(guild, name)),
     newRole(guild, '@everyone', { permissions: c.everyone }),
   ];
 
@@ -82,13 +83,17 @@ function hasReaction(message, emoji) {
 async function checkRoleMessage(guild, config, message) {
   const embed = message.embeds[0];
   const data = {
-    9662683: {
+    0x9370db: {
       roles: rrProcess(config.colors),
       desc: config.strings.colors,
     },
-    3509467: {
+    0x358cdb: {
       roles: rrProcess(config.pronouns1),
       desc: config.strings.pronouns1,
+    },
+    0x1fd9b7: {
+      roles: rrProcess(config.pronouns2),
+      desc: config.strings.pronouns2,
     },
   }[embed.color.toString()];
 
@@ -100,7 +105,7 @@ async function checkRoleMessage(guild, config, message) {
   const missing = data.roles.filter((role) => !hasReaction(message, role.emoji))
     .map((role) => `${role.emoji} ${role.name}`).join('\n');
   if (missing) {
-    await carlRelay(guild, `c!rr addmany ${message.id}\n${missing}`);
+    await carlRelay(guild, `c!rr addmany #roles-and-sigils ${message.id}\n${missing}`);
   }
 }
 
