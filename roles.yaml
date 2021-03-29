@@ -132,4 +132,4 @@ strings:
     title: "Pronouns (2/2)"
   visibility:
     title: "Channel access"
-    description: "Most of the Society's channels are hidden by default. You can toggle access to each category here. _Note: These are under construction_"
+    description: "Most of the Society's channels are hidden by default. You can toggle access to each category here."

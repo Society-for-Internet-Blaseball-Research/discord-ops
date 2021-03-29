@@ -78,7 +78,7 @@ function rrProcess(roles, props) {
     return {
       name: role,
       emoji: value.emoji,
-      help: `${value.emoji} **${role}**: ${value.desc}.`,
+      help: `${value.emoji} **${value.name}**: ${value.desc}.`,
     };
   });
 }
