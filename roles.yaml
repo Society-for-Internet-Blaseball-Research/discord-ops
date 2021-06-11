@@ -18,7 +18,7 @@ special:
   Commissioner Safety Review Board: "#f16dd8"
   Salmon Sage: "#fa8072"
   Salmon Steve: "#fa8072"
-  Hlistorian: "#3f88fd"
+  Court Bibliomancer: "#3f88fd"
 
 colors:
   Data Witch:
@@ -55,7 +55,7 @@ colors:
 other:
   - Council Emeritus
   - Archival Operations
-  - Spoiler Seeker
+  - are vibes real
   - Automaton
 
 pronouns1:
@@ -98,6 +98,10 @@ visibility:
     name: Salmon
     desc: Channels related to CRiSP Harvest Model, a mid-90s salmon harvest simulation program
     emoji: 🐟
+  Literary Criticism Access:
+    name: Literary Criticism
+    desc: "Study of all of Blaseball's narratives: The story as written, as created by the communities, and what we tell each other."
+    emoji: 📚
   Spoiler Seer:
     name: Story Spoilers
     desc: "Game code analysis and discussion of possible upcoming spoilers ([additional rules](https://discord.com/channels/738107179294523402/738107694099202160/825973943209951302))"
