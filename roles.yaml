@@ -88,7 +88,7 @@ pronouns2:
 visibility:
   All Access:
     name: All Access
-    desc: A shortcut for giving yourself access to all access areas at once.
+    desc: A shortcut for giving yourself access to all hidden categories at once.
     emoji: 🍱
   Research Access:
     name: Research
