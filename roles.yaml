@@ -92,15 +92,15 @@ visibility:
     emoji: 🍱
   Research Access:
     name: Research
-    desc: In-depth game research and analysis; game mechanics, economy, sibrmetrics
+    desc: In-depth game research and analysis; game mechanics, economy, sibrmetrics.
     emoji: 📖
   Project Access:
     name: Major Projects
-    desc: Many channels dedicated to discussion of various SIBR projects
+    desc: Many channels dedicated to discussion of various SIBR projects>
     emoji: 💼
   Salmon Seer:
     name: Salmon
-    desc: Channels related to CRiSP Harvest Model, a mid-90s salmon harvest simulation program
+    desc: Channels related to CRiSP Harvest Model, a mid-90s salmon harvest simulation program.
     emoji: 🐟
   Literary Criticism Access:
     name: Literary Criticism
@@ -112,11 +112,11 @@ visibility:
     emoji: 👁️
   Automata Access:
     name: Automata
-    desc: Channels for interacting with bots
+    desc: Channels for interacting with bots.
     emoji: 🤖
   Archives Access:
     name: Archives
-    desc: The Society Archives, home to channels gone, but not forgotten
+    desc: The Society Archives, home to channels gone, but not forgotten.
     emoji: 🗄️
 
 # Base permissions for all roles, used for @everyone
