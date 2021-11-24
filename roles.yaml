@@ -86,10 +86,10 @@ pronouns2:
 # some more emoji: 🐰🦝🦇
 
 visibility:
-  All Access:
-    name: All Access
-    desc: A shortcut for giving yourself access to all hidden categories at once.
-    emoji: 🍱
+#  All Access:
+#    name: All Access
+#    desc: A shortcut for giving yourself access to all hidden categories at once.
+#    emoji: 🍱
   Research Access:
     name: Research
     desc: In-depth game research and analysis; game mechanics, economy, sibrmetrics.
