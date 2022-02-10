@@ -4,21 +4,17 @@ power:
   SIBR GitOps: {}
   ModMail:
     hoist: true
-  Council Member:
-    permissions:
-      - MANAGE_MESSAGES
   Professor of Augury: {}
   carl-bot: {}
-  YAGPDB.xyz: {}
 sidebar:
-  Shopkeeper: "#c8a2c8"
   Elder Servorcerer: "#e74c3c"
 special:
   Ambassador of Wiki: "#9dc183"
   Commissioner Safety Review Board: "#f16dd8"
+  Court Bibliomancer: "#358cdb"
+  Headmistress Emeritus: "#9370db"
   Salmon Sage: "#fa8072"
   Salmon Steve: "#fa8072"
-  Court Bibliomancer: "#3f88fd"
 
 colors:
   Data Witch:
@@ -53,7 +49,6 @@ colors:
     emoji: ☕
 
 other:
-  - Council Emeritus
   - Archival Operations
   - are vibes real
   - Automaton
@@ -86,10 +81,6 @@ pronouns2:
 # some more emoji: 🐰🦝🦇
 
 visibility:
-#  All Access:
-#    name: All Access
-#    desc: A shortcut for giving yourself access to all hidden categories at once.
-#    emoji: 🍱
   Research Access:
     name: Research
     desc: In-depth game research and analysis; game mechanics, economy, sibrmetrics.
